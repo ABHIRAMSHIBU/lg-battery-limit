@@ -1,0 +1,11 @@
+[Unit]
+Description=Battery Care Limit Control for LG laptop
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c " echo 80 > /sys/devices/platform/lg-laptop/battery_care_limit"
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
